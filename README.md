@@ -15,6 +15,8 @@ occupations.
 
 ## Install
 
+### With pip
+
 ```sh
 # from a checkout
 pip install .
@@ -23,8 +25,32 @@ pip install .
 pip install git+https://github.com/uvar-apps/casci2molden.git
 ```
 
-This pulls in `numpy` and `pyscf`. Python ≥ 3.10. The logs are version-tolerant but
-were produced with PySCF 2.14.0.
+### With uv (`uv tool install`)
+
+[`uv`](https://docs.astral.sh/uv/) installs the tool into an isolated environment
+and exposes the `casci2molden` command on your `PATH` (no activation needed):
+
+```sh
+# from a checkout
+uv tool install .
+
+# or straight from the repo
+uv tool install git+https://github.com/uvar-apps/casci2molden.git
+
+# one-off run without a permanent install
+uvx --from git+https://github.com/uvar-apps/casci2molden.git casci2molden <dir>
+```
+
+Manage it with `uv tool list`, `uv tool upgrade casci2molden`, and
+`uv tool uninstall casci2molden`.
+
+Either method pulls in `numpy` and `pyscf`. Python ≥ 3.10. The logs are
+version-tolerant but were produced with PySCF 2.14.0.
+
+> **Note:** the only heavy dependency is PySCF. Prebuilt wheels are available for
+> common platforms (macOS arm64/x86_64, Linux x86_64), so installs are fast. On a
+> platform without a wheel, the installer falls back to building PySCF from source,
+> which requires a C compiler.
 
 ## Usage
 
