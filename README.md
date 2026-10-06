@@ -1,7 +1,10 @@
 # casci2molden
 
-Convert [PySCF](https://pyscf.org) `CASCI.log` files into **Molden** files that
-[EigenVista](https://github.com/uvar-apps/eigenvista) can visualise.
+Convert [PySCF](https://pyscf.org) `CASCI.log` files into **Molden** files.
+
+It was mainly intended to convert file to be loaded from the 
+[EigenVista](https://github.com/uvar-apps/eigenvista) program but 
+any visualiszation tool support the molden format should work.
 
 The active-space (CAS/CASSCF) logs printed by PySCF store their natural orbitals in
 the *meta-Löwdin orthonormalised AO basis*. `casci2molden` rebuilds the molecule
